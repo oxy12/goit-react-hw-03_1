@@ -1,0 +1,18 @@
+{
+  "name": "goit-react-hw-03_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "formik": "^2.4.6",
+    "nanoid": "^5.0.7",
+    "prop-types": "^15.8.1",
+    "yup": "^1.4.0"
+  }
+}
