@@ -1,24 +1,23 @@
-import css from "./SearchBox.module.css"
-import PropTypes from "prop-types"
+import { useId } from "react";
+import css from "./SearchBox.module";
 
-const SearchBox = ({ value, onSearch }) => {
-    return (
-      <div className={css.search}>
-        <p className={css.text}>Find contacts by name</p>
-        <input
-          className={css.input}
-          type='text'
-          placeholder='Search'
-          value={value}
-          onChange={(e) => onSearch(e.target.value)}
-        />
-      </div>
-    );
-  };
+export default function SearchBox({ inputValue, onType }) {
+  const userInputId = useId();
 
-  SearchBox.propTypes = {
-    value: PropTypes.string.isRequired,
-    onSearch: PropTypes.func.isRequired,
+  const handleChange = (event) => {
+    onType(event.target.value);
   };
-  
-  export default SearchBox;
+  return (
+    <>
+      <label htmlFor={userInputId}>Find contacts by name</label>
+      <input
+        className={css.input}
+        type="text"
+        name="userValue"
+        value={inputValue}
+        onChange={handleChange}
+        id={userInputId}
+      />
+    </>
+  );
+}
